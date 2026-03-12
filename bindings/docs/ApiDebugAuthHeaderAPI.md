@@ -1,0 +1,77 @@
+# \ApiDebugAuthHeaderAPI
+
+All URIs are relative to *https://packages.redhat.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ApiPulpDebugAuthHeaderGet**](ApiDebugAuthHeaderAPI.md#ApiPulpDebugAuthHeaderGet) | **Get** /api/pulp/debug_auth_header/ | 
+
+
+
+## ApiPulpDebugAuthHeaderGet
+
+> ApiPulpDebugAuthHeaderGet(ctx).XTaskDiagnostics(xTaskDiagnostics).Fields(fields).ExcludeFields(excludeFields).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/git-hyagi/pulp-bindings-go/bindings"
+)
+
+func main() {
+	xTaskDiagnostics := []string{"Inner_example"} // []string | List of profilers to use on tasks. (optional)
+	fields := []string{"Inner_example"} // []string | A list of fields to include in the response. (optional)
+	excludeFields := []string{"Inner_example"} // []string | A list of fields to exclude from the response. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ApiDebugAuthHeaderAPI.ApiPulpDebugAuthHeaderGet(context.Background()).XTaskDiagnostics(xTaskDiagnostics).Fields(fields).ExcludeFields(excludeFields).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApiDebugAuthHeaderAPI.ApiPulpDebugAuthHeaderGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApiPulpDebugAuthHeaderGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xTaskDiagnostics** | **[]string** | List of profilers to use on tasks. | 
+ **fields** | **[]string** | A list of fields to include in the response. | 
+ **excludeFields** | **[]string** | A list of fields to exclude from the response. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

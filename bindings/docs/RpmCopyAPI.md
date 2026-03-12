@@ -1,0 +1,83 @@
+# \RpmCopyAPI
+
+All URIs are relative to *https://packages.redhat.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CopyContent**](RpmCopyAPI.md#CopyContent) | **Post** /api/pulp/{pulp_domain}/api/v3/rpm/copy/ | Copy content
+
+
+
+## CopyContent
+
+> AsyncOperationResponse CopyContent(ctx, pulpDomain).Copy(copy).XTaskDiagnostics(xTaskDiagnostics).Execute()
+
+Copy content
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/git-hyagi/pulp-bindings-go/bindings"
+)
+
+func main() {
+	pulpDomain := "pulpDomain_example" // string | 
+	copy := *openapiclient.NewCopy(interface{}(123)) // Copy | 
+	xTaskDiagnostics := []string{"Inner_example"} // []string | List of profilers to use on tasks. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RpmCopyAPI.CopyContent(context.Background(), pulpDomain).Copy(copy).XTaskDiagnostics(xTaskDiagnostics).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RpmCopyAPI.CopyContent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CopyContent`: AsyncOperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `RpmCopyAPI.CopyContent`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**pulpDomain** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCopyContentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **copy** | [**Copy**](Copy.md) |  | 
+ **xTaskDiagnostics** | **[]string** | List of profilers to use on tasks. | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

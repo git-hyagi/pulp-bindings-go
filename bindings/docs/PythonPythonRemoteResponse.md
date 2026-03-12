@@ -1,0 +1,748 @@
+# PythonPythonRemoteResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**PulpHref** | Pointer to **string** |  | [optional] [readonly] 
+**Prn** | Pointer to **string** | The Pulp Resource Name (PRN). | [optional] [readonly] 
+**PulpCreated** | Pointer to **time.Time** | Timestamp of creation. | [optional] [readonly] 
+**PulpLastUpdated** | Pointer to **time.Time** | Timestamp of the most recent update of the remote. | [optional] [readonly] 
+**Name** | **string** | A unique name for this remote. | 
+**Url** | **string** | The URL of an external content source. | 
+**PulpLabels** | Pointer to **map[string]string** |  | [optional] 
+**Policy** | Pointer to [**Policy692Enum**](Policy692Enum.md) | The policy to use when downloading content. The possible values include: &#39;immediate&#39;, &#39;on_demand&#39;, and &#39;streamed&#39;. &#39;on_demand&#39; is the default.* &#x60;immediate&#x60; - When syncing, download all metadata and content now.* &#x60;on_demand&#x60; - When syncing, download metadata, but do not download content now. Instead, download content as clients request it, and save it in Pulp to be served for future client requests.* &#x60;streamed&#x60; - When syncing, download metadata, but do not download content now. Instead,download content as clients request it, but never save it in Pulp. This causes future requests for that same content to have to be downloaded again. | [optional] [default to POLICY692ENUM_ON_DEMAND]
+**HiddenFields** | Pointer to [**[]GenericRemoteResponseHiddenFieldsInner**](GenericRemoteResponseHiddenFieldsInner.md) | List of hidden (write only) fields | [optional] [readonly] 
+**CaCert** | Pointer to **string** | A PEM encoded CA certificate used to validate the server certificate presented by the remote server. | [optional] 
+**ClientCert** | Pointer to **string** | A PEM encoded client certificate used for authentication. | [optional] 
+**TlsValidation** | Pointer to **bool** | If True, TLS peer validation must be performed. | [optional] 
+**ProxyUrl** | Pointer to **string** | The proxy URL. Format: scheme://host:port | [optional] 
+**MaxRetries** | Pointer to **int64** | Maximum number of retry attempts after a download failure. If not set then the default value (3) will be used. | [optional] 
+**TotalTimeout** | Pointer to **float64** | aiohttp.ClientTimeout.total (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
+**ConnectTimeout** | Pointer to **float64** | aiohttp.ClientTimeout.connect (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
+**SockConnectTimeout** | Pointer to **float64** | aiohttp.ClientTimeout.sock_connect (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
+**SockReadTimeout** | Pointer to **float64** | aiohttp.ClientTimeout.sock_read (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
+**Headers** | Pointer to **[]map[string]interface{}** | Headers for aiohttp.Clientsession | [optional] 
+**DownloadConcurrency** | Pointer to **int64** | Total number of simultaneous connections. If not set then the default value will be used. | [optional] 
+**RateLimit** | Pointer to **int64** | Limits requests per second for each concurrent downloader | [optional] 
+**Includes** | Pointer to **[]string** | A list containing project specifiers for Python packages to include. | [optional] 
+**Excludes** | Pointer to **[]string** | A list containing project specifiers for Python packages to exclude. | [optional] 
+**Prereleases** | Pointer to **bool** | Whether or not to include pre-release packages in the sync. | [optional] 
+**PackageTypes** | Pointer to [**[]PackageTypesEnum**](PackageTypesEnum.md) | The package types to sync for Python content. Leave blank to get everypackage type. | [optional] 
+**KeepLatestPackages** | Pointer to **int64** | The amount of latest versions of a package to keep on sync, includespre-releases if synced. Default 0 keeps all versions. | [optional] [default to 0]
+**ExcludePlatforms** | Pointer to [**[]ExcludePlatformsEnum**](ExcludePlatformsEnum.md) | List of platforms to exclude syncing Python packages for. Possible valuesinclude: windows, macos, freebsd, and linux. | [optional] 
+**Provenance** | Pointer to **bool** | Whether to sync available provenances for Python packages. | [optional] [default to false]
+
+## Methods
+
+### NewPythonPythonRemoteResponse
+
+`func NewPythonPythonRemoteResponse(name string, url string, ) *PythonPythonRemoteResponse`
+
+NewPythonPythonRemoteResponse instantiates a new PythonPythonRemoteResponse object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewPythonPythonRemoteResponseWithDefaults
+
+`func NewPythonPythonRemoteResponseWithDefaults() *PythonPythonRemoteResponse`
+
+NewPythonPythonRemoteResponseWithDefaults instantiates a new PythonPythonRemoteResponse object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetPulpHref
+
+`func (o *PythonPythonRemoteResponse) GetPulpHref() string`
+
+GetPulpHref returns the PulpHref field if non-nil, zero value otherwise.
+
+### GetPulpHrefOk
+
+`func (o *PythonPythonRemoteResponse) GetPulpHrefOk() (*string, bool)`
+
+GetPulpHrefOk returns a tuple with the PulpHref field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPulpHref
+
+`func (o *PythonPythonRemoteResponse) SetPulpHref(v string)`
+
+SetPulpHref sets PulpHref field to given value.
+
+### HasPulpHref
+
+`func (o *PythonPythonRemoteResponse) HasPulpHref() bool`
+
+HasPulpHref returns a boolean if a field has been set.
+
+### GetPrn
+
+`func (o *PythonPythonRemoteResponse) GetPrn() string`
+
+GetPrn returns the Prn field if non-nil, zero value otherwise.
+
+### GetPrnOk
+
+`func (o *PythonPythonRemoteResponse) GetPrnOk() (*string, bool)`
+
+GetPrnOk returns a tuple with the Prn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrn
+
+`func (o *PythonPythonRemoteResponse) SetPrn(v string)`
+
+SetPrn sets Prn field to given value.
+
+### HasPrn
+
+`func (o *PythonPythonRemoteResponse) HasPrn() bool`
+
+HasPrn returns a boolean if a field has been set.
+
+### GetPulpCreated
+
+`func (o *PythonPythonRemoteResponse) GetPulpCreated() time.Time`
+
+GetPulpCreated returns the PulpCreated field if non-nil, zero value otherwise.
+
+### GetPulpCreatedOk
+
+`func (o *PythonPythonRemoteResponse) GetPulpCreatedOk() (*time.Time, bool)`
+
+GetPulpCreatedOk returns a tuple with the PulpCreated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPulpCreated
+
+`func (o *PythonPythonRemoteResponse) SetPulpCreated(v time.Time)`
+
+SetPulpCreated sets PulpCreated field to given value.
+
+### HasPulpCreated
+
+`func (o *PythonPythonRemoteResponse) HasPulpCreated() bool`
+
+HasPulpCreated returns a boolean if a field has been set.
+
+### GetPulpLastUpdated
+
+`func (o *PythonPythonRemoteResponse) GetPulpLastUpdated() time.Time`
+
+GetPulpLastUpdated returns the PulpLastUpdated field if non-nil, zero value otherwise.
+
+### GetPulpLastUpdatedOk
+
+`func (o *PythonPythonRemoteResponse) GetPulpLastUpdatedOk() (*time.Time, bool)`
+
+GetPulpLastUpdatedOk returns a tuple with the PulpLastUpdated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPulpLastUpdated
+
+`func (o *PythonPythonRemoteResponse) SetPulpLastUpdated(v time.Time)`
+
+SetPulpLastUpdated sets PulpLastUpdated field to given value.
+
+### HasPulpLastUpdated
+
+`func (o *PythonPythonRemoteResponse) HasPulpLastUpdated() bool`
+
+HasPulpLastUpdated returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *PythonPythonRemoteResponse) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *PythonPythonRemoteResponse) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *PythonPythonRemoteResponse) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetUrl
+
+`func (o *PythonPythonRemoteResponse) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *PythonPythonRemoteResponse) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *PythonPythonRemoteResponse) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+
+### GetPulpLabels
+
+`func (o *PythonPythonRemoteResponse) GetPulpLabels() map[string]string`
+
+GetPulpLabels returns the PulpLabels field if non-nil, zero value otherwise.
+
+### GetPulpLabelsOk
+
+`func (o *PythonPythonRemoteResponse) GetPulpLabelsOk() (*map[string]string, bool)`
+
+GetPulpLabelsOk returns a tuple with the PulpLabels field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPulpLabels
+
+`func (o *PythonPythonRemoteResponse) SetPulpLabels(v map[string]string)`
+
+SetPulpLabels sets PulpLabels field to given value.
+
+### HasPulpLabels
+
+`func (o *PythonPythonRemoteResponse) HasPulpLabels() bool`
+
+HasPulpLabels returns a boolean if a field has been set.
+
+### GetPolicy
+
+`func (o *PythonPythonRemoteResponse) GetPolicy() Policy692Enum`
+
+GetPolicy returns the Policy field if non-nil, zero value otherwise.
+
+### GetPolicyOk
+
+`func (o *PythonPythonRemoteResponse) GetPolicyOk() (*Policy692Enum, bool)`
+
+GetPolicyOk returns a tuple with the Policy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicy
+
+`func (o *PythonPythonRemoteResponse) SetPolicy(v Policy692Enum)`
+
+SetPolicy sets Policy field to given value.
+
+### HasPolicy
+
+`func (o *PythonPythonRemoteResponse) HasPolicy() bool`
+
+HasPolicy returns a boolean if a field has been set.
+
+### GetHiddenFields
+
+`func (o *PythonPythonRemoteResponse) GetHiddenFields() []GenericRemoteResponseHiddenFieldsInner`
+
+GetHiddenFields returns the HiddenFields field if non-nil, zero value otherwise.
+
+### GetHiddenFieldsOk
+
+`func (o *PythonPythonRemoteResponse) GetHiddenFieldsOk() (*[]GenericRemoteResponseHiddenFieldsInner, bool)`
+
+GetHiddenFieldsOk returns a tuple with the HiddenFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHiddenFields
+
+`func (o *PythonPythonRemoteResponse) SetHiddenFields(v []GenericRemoteResponseHiddenFieldsInner)`
+
+SetHiddenFields sets HiddenFields field to given value.
+
+### HasHiddenFields
+
+`func (o *PythonPythonRemoteResponse) HasHiddenFields() bool`
+
+HasHiddenFields returns a boolean if a field has been set.
+
+### GetCaCert
+
+`func (o *PythonPythonRemoteResponse) GetCaCert() string`
+
+GetCaCert returns the CaCert field if non-nil, zero value otherwise.
+
+### GetCaCertOk
+
+`func (o *PythonPythonRemoteResponse) GetCaCertOk() (*string, bool)`
+
+GetCaCertOk returns a tuple with the CaCert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaCert
+
+`func (o *PythonPythonRemoteResponse) SetCaCert(v string)`
+
+SetCaCert sets CaCert field to given value.
+
+### HasCaCert
+
+`func (o *PythonPythonRemoteResponse) HasCaCert() bool`
+
+HasCaCert returns a boolean if a field has been set.
+
+### GetClientCert
+
+`func (o *PythonPythonRemoteResponse) GetClientCert() string`
+
+GetClientCert returns the ClientCert field if non-nil, zero value otherwise.
+
+### GetClientCertOk
+
+`func (o *PythonPythonRemoteResponse) GetClientCertOk() (*string, bool)`
+
+GetClientCertOk returns a tuple with the ClientCert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientCert
+
+`func (o *PythonPythonRemoteResponse) SetClientCert(v string)`
+
+SetClientCert sets ClientCert field to given value.
+
+### HasClientCert
+
+`func (o *PythonPythonRemoteResponse) HasClientCert() bool`
+
+HasClientCert returns a boolean if a field has been set.
+
+### GetTlsValidation
+
+`func (o *PythonPythonRemoteResponse) GetTlsValidation() bool`
+
+GetTlsValidation returns the TlsValidation field if non-nil, zero value otherwise.
+
+### GetTlsValidationOk
+
+`func (o *PythonPythonRemoteResponse) GetTlsValidationOk() (*bool, bool)`
+
+GetTlsValidationOk returns a tuple with the TlsValidation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTlsValidation
+
+`func (o *PythonPythonRemoteResponse) SetTlsValidation(v bool)`
+
+SetTlsValidation sets TlsValidation field to given value.
+
+### HasTlsValidation
+
+`func (o *PythonPythonRemoteResponse) HasTlsValidation() bool`
+
+HasTlsValidation returns a boolean if a field has been set.
+
+### GetProxyUrl
+
+`func (o *PythonPythonRemoteResponse) GetProxyUrl() string`
+
+GetProxyUrl returns the ProxyUrl field if non-nil, zero value otherwise.
+
+### GetProxyUrlOk
+
+`func (o *PythonPythonRemoteResponse) GetProxyUrlOk() (*string, bool)`
+
+GetProxyUrlOk returns a tuple with the ProxyUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxyUrl
+
+`func (o *PythonPythonRemoteResponse) SetProxyUrl(v string)`
+
+SetProxyUrl sets ProxyUrl field to given value.
+
+### HasProxyUrl
+
+`func (o *PythonPythonRemoteResponse) HasProxyUrl() bool`
+
+HasProxyUrl returns a boolean if a field has been set.
+
+### GetMaxRetries
+
+`func (o *PythonPythonRemoteResponse) GetMaxRetries() int64`
+
+GetMaxRetries returns the MaxRetries field if non-nil, zero value otherwise.
+
+### GetMaxRetriesOk
+
+`func (o *PythonPythonRemoteResponse) GetMaxRetriesOk() (*int64, bool)`
+
+GetMaxRetriesOk returns a tuple with the MaxRetries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRetries
+
+`func (o *PythonPythonRemoteResponse) SetMaxRetries(v int64)`
+
+SetMaxRetries sets MaxRetries field to given value.
+
+### HasMaxRetries
+
+`func (o *PythonPythonRemoteResponse) HasMaxRetries() bool`
+
+HasMaxRetries returns a boolean if a field has been set.
+
+### GetTotalTimeout
+
+`func (o *PythonPythonRemoteResponse) GetTotalTimeout() float64`
+
+GetTotalTimeout returns the TotalTimeout field if non-nil, zero value otherwise.
+
+### GetTotalTimeoutOk
+
+`func (o *PythonPythonRemoteResponse) GetTotalTimeoutOk() (*float64, bool)`
+
+GetTotalTimeoutOk returns a tuple with the TotalTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalTimeout
+
+`func (o *PythonPythonRemoteResponse) SetTotalTimeout(v float64)`
+
+SetTotalTimeout sets TotalTimeout field to given value.
+
+### HasTotalTimeout
+
+`func (o *PythonPythonRemoteResponse) HasTotalTimeout() bool`
+
+HasTotalTimeout returns a boolean if a field has been set.
+
+### GetConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) GetConnectTimeout() float64`
+
+GetConnectTimeout returns the ConnectTimeout field if non-nil, zero value otherwise.
+
+### GetConnectTimeoutOk
+
+`func (o *PythonPythonRemoteResponse) GetConnectTimeoutOk() (*float64, bool)`
+
+GetConnectTimeoutOk returns a tuple with the ConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) SetConnectTimeout(v float64)`
+
+SetConnectTimeout sets ConnectTimeout field to given value.
+
+### HasConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) HasConnectTimeout() bool`
+
+HasConnectTimeout returns a boolean if a field has been set.
+
+### GetSockConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) GetSockConnectTimeout() float64`
+
+GetSockConnectTimeout returns the SockConnectTimeout field if non-nil, zero value otherwise.
+
+### GetSockConnectTimeoutOk
+
+`func (o *PythonPythonRemoteResponse) GetSockConnectTimeoutOk() (*float64, bool)`
+
+GetSockConnectTimeoutOk returns a tuple with the SockConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSockConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) SetSockConnectTimeout(v float64)`
+
+SetSockConnectTimeout sets SockConnectTimeout field to given value.
+
+### HasSockConnectTimeout
+
+`func (o *PythonPythonRemoteResponse) HasSockConnectTimeout() bool`
+
+HasSockConnectTimeout returns a boolean if a field has been set.
+
+### GetSockReadTimeout
+
+`func (o *PythonPythonRemoteResponse) GetSockReadTimeout() float64`
+
+GetSockReadTimeout returns the SockReadTimeout field if non-nil, zero value otherwise.
+
+### GetSockReadTimeoutOk
+
+`func (o *PythonPythonRemoteResponse) GetSockReadTimeoutOk() (*float64, bool)`
+
+GetSockReadTimeoutOk returns a tuple with the SockReadTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSockReadTimeout
+
+`func (o *PythonPythonRemoteResponse) SetSockReadTimeout(v float64)`
+
+SetSockReadTimeout sets SockReadTimeout field to given value.
+
+### HasSockReadTimeout
+
+`func (o *PythonPythonRemoteResponse) HasSockReadTimeout() bool`
+
+HasSockReadTimeout returns a boolean if a field has been set.
+
+### GetHeaders
+
+`func (o *PythonPythonRemoteResponse) GetHeaders() []map[string]interface{}`
+
+GetHeaders returns the Headers field if non-nil, zero value otherwise.
+
+### GetHeadersOk
+
+`func (o *PythonPythonRemoteResponse) GetHeadersOk() (*[]map[string]interface{}, bool)`
+
+GetHeadersOk returns a tuple with the Headers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeaders
+
+`func (o *PythonPythonRemoteResponse) SetHeaders(v []map[string]interface{})`
+
+SetHeaders sets Headers field to given value.
+
+### HasHeaders
+
+`func (o *PythonPythonRemoteResponse) HasHeaders() bool`
+
+HasHeaders returns a boolean if a field has been set.
+
+### GetDownloadConcurrency
+
+`func (o *PythonPythonRemoteResponse) GetDownloadConcurrency() int64`
+
+GetDownloadConcurrency returns the DownloadConcurrency field if non-nil, zero value otherwise.
+
+### GetDownloadConcurrencyOk
+
+`func (o *PythonPythonRemoteResponse) GetDownloadConcurrencyOk() (*int64, bool)`
+
+GetDownloadConcurrencyOk returns a tuple with the DownloadConcurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadConcurrency
+
+`func (o *PythonPythonRemoteResponse) SetDownloadConcurrency(v int64)`
+
+SetDownloadConcurrency sets DownloadConcurrency field to given value.
+
+### HasDownloadConcurrency
+
+`func (o *PythonPythonRemoteResponse) HasDownloadConcurrency() bool`
+
+HasDownloadConcurrency returns a boolean if a field has been set.
+
+### GetRateLimit
+
+`func (o *PythonPythonRemoteResponse) GetRateLimit() int64`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *PythonPythonRemoteResponse) GetRateLimitOk() (*int64, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *PythonPythonRemoteResponse) SetRateLimit(v int64)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *PythonPythonRemoteResponse) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
+
+### GetIncludes
+
+`func (o *PythonPythonRemoteResponse) GetIncludes() []string`
+
+GetIncludes returns the Includes field if non-nil, zero value otherwise.
+
+### GetIncludesOk
+
+`func (o *PythonPythonRemoteResponse) GetIncludesOk() (*[]string, bool)`
+
+GetIncludesOk returns a tuple with the Includes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludes
+
+`func (o *PythonPythonRemoteResponse) SetIncludes(v []string)`
+
+SetIncludes sets Includes field to given value.
+
+### HasIncludes
+
+`func (o *PythonPythonRemoteResponse) HasIncludes() bool`
+
+HasIncludes returns a boolean if a field has been set.
+
+### GetExcludes
+
+`func (o *PythonPythonRemoteResponse) GetExcludes() []string`
+
+GetExcludes returns the Excludes field if non-nil, zero value otherwise.
+
+### GetExcludesOk
+
+`func (o *PythonPythonRemoteResponse) GetExcludesOk() (*[]string, bool)`
+
+GetExcludesOk returns a tuple with the Excludes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludes
+
+`func (o *PythonPythonRemoteResponse) SetExcludes(v []string)`
+
+SetExcludes sets Excludes field to given value.
+
+### HasExcludes
+
+`func (o *PythonPythonRemoteResponse) HasExcludes() bool`
+
+HasExcludes returns a boolean if a field has been set.
+
+### GetPrereleases
+
+`func (o *PythonPythonRemoteResponse) GetPrereleases() bool`
+
+GetPrereleases returns the Prereleases field if non-nil, zero value otherwise.
+
+### GetPrereleasesOk
+
+`func (o *PythonPythonRemoteResponse) GetPrereleasesOk() (*bool, bool)`
+
+GetPrereleasesOk returns a tuple with the Prereleases field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrereleases
+
+`func (o *PythonPythonRemoteResponse) SetPrereleases(v bool)`
+
+SetPrereleases sets Prereleases field to given value.
+
+### HasPrereleases
+
+`func (o *PythonPythonRemoteResponse) HasPrereleases() bool`
+
+HasPrereleases returns a boolean if a field has been set.
+
+### GetPackageTypes
+
+`func (o *PythonPythonRemoteResponse) GetPackageTypes() []PackageTypesEnum`
+
+GetPackageTypes returns the PackageTypes field if non-nil, zero value otherwise.
+
+### GetPackageTypesOk
+
+`func (o *PythonPythonRemoteResponse) GetPackageTypesOk() (*[]PackageTypesEnum, bool)`
+
+GetPackageTypesOk returns a tuple with the PackageTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPackageTypes
+
+`func (o *PythonPythonRemoteResponse) SetPackageTypes(v []PackageTypesEnum)`
+
+SetPackageTypes sets PackageTypes field to given value.
+
+### HasPackageTypes
+
+`func (o *PythonPythonRemoteResponse) HasPackageTypes() bool`
+
+HasPackageTypes returns a boolean if a field has been set.
+
+### GetKeepLatestPackages
+
+`func (o *PythonPythonRemoteResponse) GetKeepLatestPackages() int64`
+
+GetKeepLatestPackages returns the KeepLatestPackages field if non-nil, zero value otherwise.
+
+### GetKeepLatestPackagesOk
+
+`func (o *PythonPythonRemoteResponse) GetKeepLatestPackagesOk() (*int64, bool)`
+
+GetKeepLatestPackagesOk returns a tuple with the KeepLatestPackages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeepLatestPackages
+
+`func (o *PythonPythonRemoteResponse) SetKeepLatestPackages(v int64)`
+
+SetKeepLatestPackages sets KeepLatestPackages field to given value.
+
+### HasKeepLatestPackages
+
+`func (o *PythonPythonRemoteResponse) HasKeepLatestPackages() bool`
+
+HasKeepLatestPackages returns a boolean if a field has been set.
+
+### GetExcludePlatforms
+
+`func (o *PythonPythonRemoteResponse) GetExcludePlatforms() []ExcludePlatformsEnum`
+
+GetExcludePlatforms returns the ExcludePlatforms field if non-nil, zero value otherwise.
+
+### GetExcludePlatformsOk
+
+`func (o *PythonPythonRemoteResponse) GetExcludePlatformsOk() (*[]ExcludePlatformsEnum, bool)`
+
+GetExcludePlatformsOk returns a tuple with the ExcludePlatforms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludePlatforms
+
+`func (o *PythonPythonRemoteResponse) SetExcludePlatforms(v []ExcludePlatformsEnum)`
+
+SetExcludePlatforms sets ExcludePlatforms field to given value.
+
+### HasExcludePlatforms
+
+`func (o *PythonPythonRemoteResponse) HasExcludePlatforms() bool`
+
+HasExcludePlatforms returns a boolean if a field has been set.
+
+### GetProvenance
+
+`func (o *PythonPythonRemoteResponse) GetProvenance() bool`
+
+GetProvenance returns the Provenance field if non-nil, zero value otherwise.
+
+### GetProvenanceOk
+
+`func (o *PythonPythonRemoteResponse) GetProvenanceOk() (*bool, bool)`
+
+GetProvenanceOk returns a tuple with the Provenance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvenance
+
+`func (o *PythonPythonRemoteResponse) SetProvenance(v bool)`
+
+SetProvenance sets Provenance field to given value.
+
+### HasProvenance
+
+`func (o *PythonPythonRemoteResponse) HasProvenance() bool`
+
+HasProvenance returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
