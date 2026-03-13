@@ -88614,6 +88614,7 @@ components:
       - vulns
       type: object
     GenericRemoteResponse_hidden_fields_inner:
+      additionalProperties: false
       example:
         is_set: true
         name: name

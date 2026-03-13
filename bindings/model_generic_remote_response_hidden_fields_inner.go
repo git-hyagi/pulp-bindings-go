@@ -13,6 +13,7 @@ package bindings
 
 import (
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -23,7 +24,6 @@ var _ MappedNullable = &GenericRemoteResponseHiddenFieldsInner{}
 type GenericRemoteResponseHiddenFieldsInner struct {
 	Name string `json:"name"`
 	IsSet bool `json:"is_set"`
-	AdditionalProperties map[string]interface{}
 }
 
 type _GenericRemoteResponseHiddenFieldsInner GenericRemoteResponseHiddenFieldsInner
@@ -107,11 +107,6 @@ func (o GenericRemoteResponseHiddenFieldsInner) ToMap() (map[string]interface{},
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["is_set"] = o.IsSet
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return toSerialize, nil
 }
 
@@ -140,21 +135,15 @@ func (o *GenericRemoteResponseHiddenFieldsInner) UnmarshalJSON(data []byte) (err
 
 	varGenericRemoteResponseHiddenFieldsInner := _GenericRemoteResponseHiddenFieldsInner{}
 
-	err = json.Unmarshal(data, &varGenericRemoteResponseHiddenFieldsInner)
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGenericRemoteResponseHiddenFieldsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GenericRemoteResponseHiddenFieldsInner(varGenericRemoteResponseHiddenFieldsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "is_set")
-		o.AdditionalProperties = additionalProperties
-	}
 
 	return err
 }

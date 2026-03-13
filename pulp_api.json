@@ -82838,7 +82838,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -92880,7 +92881,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -93072,7 +93074,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -94126,7 +94129,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -94545,7 +94549,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -95644,7 +95649,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -96362,7 +96368,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -97104,7 +97111,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -97713,7 +97721,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -98207,7 +98216,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -99432,7 +99442,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -101554,7 +101565,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"
@@ -102091,7 +102103,8 @@
               "required": [
                 "is_set",
                 "name"
-              ]
+              ],
+              "additionalProperties": false
             },
             "readOnly": true,
             "description": "List of hidden (write only) fields"

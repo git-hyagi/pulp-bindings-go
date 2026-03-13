@@ -24,6 +24,10 @@ jq '.components.schemas |= with_entries(
   end
 )' pulp_api.json > pulp_api_new.json
 mv pulp_api_new.json pulp_api.json
+
+# Add "additionalProperties": false to hidden_fields items (fix schema validation for remotes)
+jq 'walk(if type == "object" and .hidden_fields? then .hidden_fields.items.additionalProperties = false else . end)' pulp_api.json > pulp_api_new.json
+mv pulp_api_new.json pulp_api.json
 ```
 
 * generate the bindings
